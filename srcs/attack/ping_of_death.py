@@ -9,7 +9,7 @@ def send_ping(target_ip_address: str, number_of_packets_to_send: int = 4, size: 
     raw = Raw(b"X" * size)
     p = ip / icmp / raw
     send(p, count=number_of_packets_to_send, verbose=0)
-    print('send_ping(): Sent ' + str(number_of_packets_to_send) + ' pings of ' + str(size_of_packet) + ' size to ' + target_ip_address)
+    print('send_ping(): Sent ' + str(number_of_packets_to_send) + ' pings of ' + str(size) + ' size to ' + target_ip_address)
 
 
 ip = "10.0.2.8"
