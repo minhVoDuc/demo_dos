@@ -1,0 +1,4 @@
+#Detect Ping Scan
+alert icmp any any -> $HOME_NET any (msg:"Ping scan detected!"; sid: 1000001; rev:1; classtype:icmp-event;)
+#Detect SYN Flood
+alert tcp any any -> $HOME_NET 80 (flags: S; msg:"SYN Flood detected!"; flow:stateless; sid:3; detection_filter: track by_dst, count 10000, seconds 1;)
